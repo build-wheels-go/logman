@@ -14,7 +14,7 @@ func main() {
 	logman.SetOptions(logman.WithFormatter(&logman.JsonFormatter{}))
 	logman.Debug("log in json format")
 	logman.Info("another log in json format")
-
+	logman.Infof("file name is %s, size is %d Kb", "test.log", 1024)
 	//输出到文件
 	fd, err := os.OpenFile("test.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
